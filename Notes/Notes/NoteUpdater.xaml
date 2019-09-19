@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.NoteUpdater"
+             Title="Update a note">
+    <ContentPage.Resources>
+        <Style TargetType="{x:Type Editor}">
+            <Setter Property="BackgroundColor" Value="{StaticResource AppBackgroundColor}"></Setter>
+        </Style>
+        <Style TargetType="Button" ApplyToDerivedTypes="True" CanCascade="True">
+            <Setter Property="BackgroundColor" Value="#0D658C"></Setter>
+            <Setter Property="FontSize" Value="Medium"></Setter>
+            <Setter Property="BorderRadius" Value="5"></Setter>
+            <Setter Property="FontFamily" Value="sanserif"></Setter>
+            <Setter Property="TextColor" Value="White"></Setter>
+        </Style>
+    </ContentPage.Resources>
+    
+    
+    <ContentPage.Content>
+        <StackLayout Margin="{StaticResource PageMargin}">
+            <Label Text="Add a new note:"/>
+            <Entry x:Name="title" Text="{Binding Title}" Placeholder="Enter a title" VerticalOptions="Start"></Entry>
+            <Editor x:Name="descrip" Text="{Binding Description}" Placeholder="Enter a description"  HeightRequest="100"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="saveButton" Text="Save" Grid.Column="1" Clicked="SavePressed"/>
+                <Button x:Name="deleteBtn" Text="Delete" Clicked="DeletePressed" BackgroundColor="#bf253c" TextColor="White"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

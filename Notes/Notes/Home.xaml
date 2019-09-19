@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Home">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#0D658C"></Setter>
+            <Setter Property="FontSize" Value="Small"></Setter>
+            <Setter Property="FontFamily" Value="sanserif"></Setter>
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="BorderRadius" Value="20"></Setter>
+        </Style>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="{StaticResource PageMargin}" HorizontalOptions="Center">
+            <Image x:Name="logo" Source="circleCropped.png" Margin="0,20,0,0"></Image>
+            <Label Text="Welcome to Protes mobile app!" FontAttributes="Bold" FontSize="Large" TextColor="Gray" Margin="30" HorizontalTextAlignment="Center"></Label>
+            <Button Text="My notes" Clicked="MyNotesClicked" HorizontalOptions="Center" Margin="20"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

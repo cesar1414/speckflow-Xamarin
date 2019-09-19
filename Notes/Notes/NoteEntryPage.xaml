@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.NoteEntryPage"
+             Title="New note">
+
+    <ContentPage.Resources>
+        <Style TargetType="{x:Type Editor}">
+            <Setter Property="BackgroundColor" Value="{StaticResource AppBackgroundColor}"></Setter>
+        </Style>
+        <Style TargetType="Button" ApplyToDerivedTypes="True" CanCascade="True">
+            <Setter Property="FontSize" Value="Medium"></Setter>
+            <Setter Property="BackgroundColor" Value="#0D658C"></Setter>
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="BorderRadius" Value="5"></Setter>
+            <Setter Property="FontFamily" Value="sanserif"></Setter>
+        </Style>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="{StaticResource PageMargin}">
+            <Label Text="Add a new note:"/>
+            <Entry x:Name="title" Text="{Binding Title}" Placeholder="Enter a title" VerticalOptions="Start"></Entry>
+            <Editor x:Name="descrip" Text="{Binding Description}" Placeholder="Enter a description"  HeightRequest="100"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="saveButton" Grid.Column="1" Text="Save" Clicked="SavePressed">
+                    <!--<Button.Triggers>
+                        <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference title}, Path=Text.Length}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                            <Setter Property="BackgroundColor" Value="LightGray"/>
+                        </DataTrigger>
+                        --><!--<DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference descrip}, Path=Text.Length}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger>--><!--
+                    </Button.Triggers>-->
+                </Button>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
